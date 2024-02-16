@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>UserApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/icon.png">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      .navbar-brand {
+        display: none !important;
+      }
+
+      .ua-sidebar {
+        position: absolute !important;
+      }
+
+      .ua-container{
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+    .bg-body-userapp {
+      background-color: #363740 !important;
+    }
+
+    .ua-menu-item a {
+      color: #A4A6B3 !important;
+    }
+
+    .ua-nav-link {
+      color: black !important;
+    }
+
+    .ua-nav-link:focus,
+    .ua-nav-link:hover {
+      color: black !important;
+    }
+
+    .ua-sidebar {
+      height: auto;
+    }
+
+    .ua-btn-primary {
+      border-radius: 50px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      background-color: #65A7DB !important;
+      border-color: #65A7DB !important;
+      font-size: 11px !important;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .ua-btn-primary:hover {
+      background-color: #4986b4 !important;
+      border-color: #4986b4 !important;
+    }
+
+    .ua-btn-primary:active {
+      background-color: #3a6e96 !important;
+      border-color: #3a6e96 !important;
+    }
+
+    .ua-table-header tr th {
+
+      color: #9FA2B4 !important;
+      font-size: 0.9em;
+
+    }
+
+    .ua-card {
+      background-color: #ffffffff !important;
+    }
+
+    .ua-card-header {
+      background-color: #ffffffff !important;
+      border-bottom: none !important;
+    }
+
+    .ua-card-footer {
+      background-color: #ffffffff !important;
+      border-top: none !important;
+    }
+
+    .ua-body {
+      background-color: #f7f8fcff !important;
+    }
+
+    .ud-table-body tr td {
+
+      padding-top: 20px !important;
+      padding-bottom: 15px !important;
+      font-size: 0.9em;
+      align-items: center !important;
+      vertical-align: middle;
+    }
+
+    .ua-pagination-data {
+      font-size: 13px !important;
+      color: #9FA2B4;
+    }
+
+    .ua-pagination .page-item .page-link {
+      border: none !important;
+      color: #9FA2B4;
+    }
+
+    .ua-pp-cover {
+      height: 35px;
+      width: 35px;
+      border-radius: 50% !important;
+      border: solid 2px #DFE0EB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+
+    .ua-pp-name {
+      font-size: 14px;
+      align-items: center;
+      vertical-align: middle;
+      display: flex;
+      color: #252733;
+    }
+
+    .ua-label-header{
+      color: #252733;
+    }
+
+    .ua-label-body{
+      color: #828282;
+    }
+
+    .ua-page-link:hover{
+      cursor: pointer;
+    }
+
+    .ua-nav-link-item:hover{
+      color:#f9f9f9 !important;
+    }
+
+  </style>
+<link rel="stylesheet" href="styles-EQEETZ7F.css"></head>
+
+<body class="ua-body">
+  <app-root></app-root>
+<script src="polyfills-RT5I6R6G.js" type="module"></script><script src="scripts-NCWJS6GS.js" defer></script><script src="main-Q62JZKIF.js" type="module"></script></body>
+
+</html>

@@ -1,0 +1,50 @@
+<div class=" ua-container">
+  <div class="card ua-card">
+    <div class="card-header ua-card-header px-4 py-3">
+      <span class="card-title fw-bold">All Users</span>
+    </div>
+
+    <div class="card-body p-0 mt-3">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="ua-table-header">
+            <tr>
+              <th scope="col" style="width: 6%;"></th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="ud-table-body">
+            <tr *ngFor="let user of users.data">
+              <td>
+                <img src="{{user.photo}}" class="rounded float-end ua-pp-list">
+              </td>
+              <td>{{user.firstname}} {{user.lastname}}</td>
+              <td>{{user.email}}</td>
+              <td class="px-4">
+                <a [routerLink]="['/user-detail', user.id]" class="btn btn-sm btn-primary ua-btn-primary float-end">VIEW
+                  DETAIL</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card-footer ua-card-footer">
+      <div class="float-end d-flex" style="align-items: center;">
+        <span class="ua-pagination-data mx-2"><span>{{users.index_start}} - {{users.index_end}}</span> to
+          <span>{{users.total_item}}</span></span>
+        <ul class="pagination pagination-sm m-0 ua-pagination">
+          <li class="page-item"><a class="page-link ua-page-link" (click)="onPagePrev()"><i
+                class="fas fa-solid fa-chevron-left"></i></a></li>
+          <li class="page-item"><a class="page-link ua-page-link" (click)="onPageNext(users.total_page)"><i
+                class="fas fa-solid fa-chevron-right"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

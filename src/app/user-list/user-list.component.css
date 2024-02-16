@@ -1,0 +1,6 @@
+.ua-pp-list {
+    border-radius: 50% !important;
+    width: 35px;
+    aspect-ratio: 1 / 1;  /* defining the aspect ratio of the image */
+    object-fit: cover; 
+}

@@ -1,0 +1,54 @@
+<div class="row ua-container">
+
+    <div class="col-md-6">
+
+        <div class="card">
+            <div class="card-body px-4 py-4">
+                <h5 class="card-title">{{user.firstname}} {{user.lastname}}</h5>
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-6 mb-4">
+                        <img src="{{user.photo}}"
+                            class="ua-pp-detail rounded float-start" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-mb-12">
+                                <label class="ua-label-header">First Name</label>
+                            </div>
+                            <div class="col-mb-12">
+                                <label class="ua-label-body">{{user.firstname}}</label>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-mb-12">
+                                <label class="ua-label-header">Last Name</label>
+                            </div>
+                            <div class="col-mb-12">
+                                <label class="ua-label-body" >{{user.lastname}}</label>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-mb-12">
+                                <label class="ua-label-header">Email</label>
+                            </div>
+                            <div class="col-mb-12">
+                                <label class="ua-label-body" >{{user.email}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <a [routerLink]="['/user-list']" class="btn btn-sm btn-primary ua-btn-primary float-start mt-4">BACK</a>
+
+
+    </div>
+
+    <div class="col-md-6">
+
+    </div>
+
+</div>

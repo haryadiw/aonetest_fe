@@ -1,0 +1,82 @@
+<header class="navbar flex-md-nowrap p-0 " data-bs-theme="dark">
+
+  <a class="navbar-brand bg-body-userapp col-md-3 col-lg-2 me-0 px-3 py-4 fs-6 text-white" href="#">
+    <img height="40" src="./assets/logo.png">
+    AOne
+  </a>
+
+  <ul class="navbar-nav flex-row d-md-none">
+
+    <li class="nav-item text-nowrap">
+      <button class="nav-link ua-nav-link px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-solid fa-bars"></i>
+      </button>
+    </li>
+
+  </ul>
+
+  <div style="width: 100%;" class="px-4 flex-md-nowrap align-items-center mb-3 mt-4">
+    <div class="row d-flex justify-content-between">
+      <div class="col-md-6 col-3 pt-1">
+        <h5>{{title}}</h5>
+      </div>
+      <div class="col-md-6 col-9">
+        <div class="d-flex justify-content-end">
+        <span class="px-2 ua-pp-name">{{profile.firstname}} {{profile.lastname}}</span>
+        <div class="ua-pp-cover">
+          <img src="{{profile.photo}}" class="rounded float-end ua-pp-header">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</header>
+
+<div class="container-fluid">
+  <div class="row" style="min-height: 100vh;">
+    <div class="sidebar col-md-3 col-lg-2 p-0 bg-body-userapp ua-sidebar">
+      <div class="offcanvas-md offcanvas-start bg-body-userapp" tabindex="-1" id="sidebarMenu"
+        aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-white" id="sidebarMenuLabel">
+            <img height="50" src="./assets/logo.png">
+            AOne
+          </h5>
+          <a class="text-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"><span
+              class="fas fa-solid fa-xmark"></span></a>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+          <ul class="nav flex-column px-2">
+            <li class="nav-item ua-menu-item">
+              <a class="nav-link d-flex align-items-center gap-2 active ua-nav-link-item" (click)="onChangeLink('About')"
+                aria-current="page" [routerLink]="['/']" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close">
+                <i class="fas fa-thin fa-circle-info"></i>
+                About
+              </a>
+            </li>
+            <li class="nav-item ua-menu-item">
+              <a class="nav-link d-flex align-items-center gap-2 ua-nav-link-item" (click)="onChangeLink('Users')"
+                [routerLink]="['/user-list']" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close">
+                <i class="fas fa-users"></i>
+                Users
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-3">
+
+
+      <router-outlet></router-outlet>
+
+
+    </main>
+  </div>
+</div>
